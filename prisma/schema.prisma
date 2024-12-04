@@ -11,7 +11,7 @@ datasource db {
 }
 
 model WorkFlow {
-  id          String      @id @default(cuid()) // Auto-incremented primary key
+  id          String      @id @default(cuid()) 
   name        String
   userId      String
   description String?

@@ -23,22 +23,22 @@ import {
 
 const routes = [
     {
-        href: "",
+        href: "/",
         label: 'Home',
         icon: HomeIcon
     },
     {
-        href: "workflows",
+        href: "/workflows",
         label: 'Workflows',
         icon: Layers2Icon
     },
     {
-        href: "credentials",
+        href: "/credentials",
         label: 'Credentials',
         icon: ShieldCheckIcon
     },
     {
-        href: "billing",
+        href: "/billing",
         label: 'Billing',
         icon: CoinsIcon
     },
@@ -49,6 +49,8 @@ export const DesktopSideBar = () => {
     const activePathName = usePathname();
     const activeRoute = routes.find(item => item.href.length > 0 && item.href === activePathName) || routes[0];
 
+    debugger
+    
     return (
         <div className='hidden md:block min-w-[250px] max-w-[300px] h-screen overflow-y-auto w-full bg-primary/5 dark:bg-secondary/30 dark:text-foreground text-muted-foreground border-r-2 border-separate'>
             <div className='flex flex-1 justify-center p-4 align-middle items-center'>

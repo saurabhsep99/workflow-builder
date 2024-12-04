@@ -22,7 +22,6 @@ export function BreadcrumpHeader() {
  const path=usePathname();
  const pathName = path === '/' ? [''] : path.split('/');   
  const isMobileView = useIsMobile(); 
- const [isSheetOpen,setIsSheetOpen]=React.useState(false)
     return (
       <div className='flex flex-1 align-middle items-center'>
         {/* {isMobileView && <div className='mr-7'><Columns4 onClick={()=>setIsSheetOpen(!isSheetOpen)}/></div>} */}
@@ -30,14 +29,15 @@ export function BreadcrumpHeader() {
   <Breadcrumb >
         <BreadcrumbList>
           {pathName?.map((item, index) => (
+            <>
             <BreadcrumbItem key={index}>
               <BreadcrumbLink href={`/${item}`}>{item ==='' ? 'Home' : item }</BreadcrumbLink>
-              {index < pathName.length - 1 && (
-                <BreadcrumbSeparator>
-                  <Slash />
-                </BreadcrumbSeparator>
-              )}
             </BreadcrumbItem>
+            {index < pathName.length - 1 && ( 
+                 <BreadcrumbSeparator/>
+              )}
+            </>
+            
           ))}
         </BreadcrumbList>
       </Breadcrumb>
